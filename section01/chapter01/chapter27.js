@@ -6,7 +6,11 @@ let object2 = {
 
 object2["age"] = 10;
 
+let arr = [1,2,3,4,5];
+
 console.log(object2);
+console.log(JSON.stringify(arr));
+console.log(arr);
 
 console.log(JSON.stringify(object1) === JSON.stringify(object2));
 
