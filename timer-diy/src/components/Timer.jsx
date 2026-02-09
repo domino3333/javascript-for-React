@@ -1,9 +1,9 @@
-const Timer = ()=>{
+const Timer = ({time})=>{
 
-  
+
 
   return (<>
-    <h1>{}</h1>
+    <h1>{time.hour}:{time.minute}:{time.second}</h1>
   </>)
 }
 

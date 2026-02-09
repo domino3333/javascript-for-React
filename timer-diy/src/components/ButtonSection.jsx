@@ -1,8 +1,16 @@
-const ButtonSection = ()=>{
+const ButtonSection = ({startTime})=>{
+
+
+  const startButtonClick = ()=>{
+    startTime();
+
+  }
 
 
   return (<>
-    <h1>버튼 구역</h1>
+    <button type="type" onClick={startButtonClick}>시작</button>
+    <button type="type">정지</button>
+    <button type="type">초기화</button>
   </>)
 }
 
