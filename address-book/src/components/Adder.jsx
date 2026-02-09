@@ -2,33 +2,29 @@ import { useState } from "react";
 
 
 
-const Adder = ({addAddress}) => {
+const Adder = ({ addAddress }) => {
 
   //input을 바라보는 onChange가 있어야 함
-  const [name, setName] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [email, setEmail] = useState('');
+  const [input, setInput] = useState({})
 
-  const observeName = (e) => {
-    setName(e.target.value);
-  }
-  const observePhoneNumber = (e) => {
-    setPhoneNumber(e.target.value);
-  }
-  const observeEmail = (e) => {
-    setEmail(e.target.value);
+  const observeInput = (e) => {
+    setInput({
+      ...input,
+      [e.target.name]: e.target.value
+    })
   }
 
-  const clickAddButton = ()=>{
 
-    addAddress(name,phoneNumber,email);
+  const clickAddButton = () => {
+
+    addAddress(input);
   }
 
   return (<>
-    <input type="text" placeholder="이름" onChange={observeName} /><br />
-    <input type="text" placeholder="전화번호" onChange={observePhoneNumber} /><br />
-    <input type="text" placeholder="이메일" onChange={observeEmail} /><br />
-    <button type="button" onClick={clickAddButton}>연락처에 추가</button><br/>
+    <input value={input.name}name="name" type="text" placeholder="이름" onChange={observeInput} /><br />
+    <input name="phoneNumber" type="text" placeholder="전화번호" onChange={observeInput} /><br />
+    <input type="text" name="email" placeholder="이메일" onChange={observeInput} /><br />
+    <button type="button" onClick={clickAddButton}>연락처에 추가</button><br />
   </>)
 }
 

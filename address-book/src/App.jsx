@@ -10,8 +10,8 @@ function App() {
   const[address,setAddress] = useState([]);
 
 
-  const addAddress = (name,phoneNumber,email)=>{
-    setAddress([...address,{name,phoneNumber,email}])
+  const addAddress = (input)=>{
+    setAddress(prev=>[...prev,input])
   }
   console.log(address)
 
