@@ -23,12 +23,25 @@ const Adder = ({ addGoods }) => {
     addGoods(name, price);
   }
 
+  const enterKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      addGoods(name, price);
+      setName('')
+      setPrice(0)
+
+    }
+
+  }
+
 
   return (<>
-    <input placeholder="추가할 상품 입력" onChange={observeNameData} />
+    <input value={name} placeholder="추가할 상품 입력" onChange={observeNameData} />
     <input type="number"
       placeholder="추가할 상품의 가격 입력"
-      onChange={observePriceData} />
+      onChange={observePriceData}
+      onKeyDown={enterKeyDown}
+      value={price}
+    />
     <button type="button" onClick={clickAddButton}>추가</button>
   </>)
 

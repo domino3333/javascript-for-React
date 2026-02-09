@@ -1,10 +1,13 @@
+import ShoppingItem from "./ShoppingItem";
+
+const ShoppingList = ({ goods }) => {
 
 
-const ShoppingList = ()=>{
-  
+  return (<>
+    {goods.map((item) =>
+      (< ShoppingItem key={item.id}{...item} />)
 
-  return(<>
-    <h1>리스트</h1>
+    )}
   </>)
 
 

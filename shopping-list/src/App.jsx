@@ -31,7 +31,7 @@ function App() {
     <>
       <Header/>
       <Adder addGoods={addGoods}/>
-      <ShoppingList/>
+      <ShoppingList goods={goods}/>
     </> 
   )
 }
