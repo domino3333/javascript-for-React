@@ -1,7 +1,7 @@
 import ShoppingItem from "./ShoppingItem";
 import { useState } from "react";
 
-const ShoppingList = ({ goods }) => {
+const ShoppingList = ({ goods,deleteGoods }) => {
 
 
   //검색창에 입력된 텍스트를 state
@@ -32,7 +32,7 @@ const ShoppingList = ({ goods }) => {
 
   return (<>
     {filteredDatas.map((item) =>
-      (< ShoppingItem key={item.id}{...item} />)
+      (< ShoppingItem key={item.id}{...item} deleteGoods={deleteGoods} />)
     )}
     <br/>
     <input onChange={observeNameData}type="text" placeholder="검색할 상품의 이름"/>
