@@ -20,7 +20,7 @@ function App() {
     <>
     <Header/>
     <Adder addAddress={addAddress}/>
-    <Content/>
+    <Content address = {address}/>
     </>
   )
 }

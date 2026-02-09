@@ -24,10 +24,6 @@ const Adder = ({addAddress}) => {
     addAddress(name,phoneNumber,email);
   }
 
-
-
-
-
   return (<>
     <input type="text" placeholder="이름" onChange={observeName} /><br />
     <input type="text" placeholder="전화번호" onChange={observePhoneNumber} /><br />

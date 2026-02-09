@@ -1,7 +1,14 @@
-const Content= ()=>{
+import AddressItem from "./AddressItem";
+
+const Content= ({address})=>{
+
 
   return(<>
-    <h1>컨탠트</h1>
+    <div>
+      {address.map((item)=>(
+        <AddressItem key={item.name}{...item}/>
+      ))}
+    </div>
   </>)
 }
 
