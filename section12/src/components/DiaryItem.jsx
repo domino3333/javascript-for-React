@@ -1,4 +1,5 @@
 
+import { useNavigate } from 'react-router-dom';
 import { getEmotionImage } from '../util/getEmotionImage'
 import Button from './Button';
 import './DiaryItem.css'
@@ -6,9 +7,11 @@ import './DiaryItem.css'
 const DiaryItem = ({ id, emotionId, createdDate, content }) => {
 
 
+  const nav = useNavigate();
+
   return (
     <div className="DiaryItem">
-      <div className="img_section">
+      <div className="img_section" onClick={()=>nav(`/diary/${id}`)}>
         <img src={getEmotionImage(emotionId)} alt="감정이미지" />
       </div><div className="info_section">
         <div className="created_date">

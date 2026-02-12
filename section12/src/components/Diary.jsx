@@ -1,19 +1,18 @@
 import Button from './Button'
 import Header from './Header';
 
+import { useParams } from 'react-router-dom';
 
 const Diary = () => {
 
     const onClickButton = (e) => {
     alert(e.target.innerText);
   }
+  const params = useParams();
+
 
   return(<>
-  <Header title={"HEADER"}
-    leftChild={<Button text={"LEFT"} onClick={onClickButton} type={"POSITIVE"} />}
-    rightChild={<Button text={"RIGHT"} type={"NEGATIVE"} onClick={onClickButton} />}
-    />
-    <h1>Diary</h1>
+    <h1>{params.id}Diary</h1>
   </>)
 }
 
