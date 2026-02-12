@@ -1,4 +1,5 @@
 import { Route, Routes, useNavigate } from 'react-router-dom'
+import { useReducer, useRef, createContext } from 'react'
 import './App.css'
 import Home from './components/Home'
 import New from './components/New'
@@ -26,16 +27,14 @@ const mockData = [
 function reducer(state, action) {
   switch (action.type) {
     case "CREATE":
-      return [...state,action.data];
+      return [action.data, ...state];
     case "UPDATE":
       return state.map((item) =>
-        String(item.id) === String(action.data.id)
-          ? action.data
-          : item
+        item.id === action.id ? action.data : item
       );
     case "DELETE":
       return state.filter(
-        (item) => String(item.id) !== String(action.id)
+        (item) => item.id !== action.id
       );
     default:
       return state;
@@ -46,20 +45,58 @@ function reducer(state, action) {
 
 function App() {
 
+  const [state, dispatch] = useReducer(reducer, mockData)
 
+  const idRef = useRef(3);
 
+  //이벤트 처리 onCreate,onUpdate, onDelete
+  const onCreate = (createDate, emotionId, content) => {
+    const newItem = {
+      id: idRef.current++,
+      createDate,
+      emotionId,
+      content
+    }
+    dispatch({ type: "CREATE", data: newItem })
+  }
 
+  const onUpdate = (id, createDate, emotionId, content) => {
+    const newItem = {
+      id,
+      createDate,
+      emotionId,
+      content
+    }
+    dispatch({ type: "UPDATE", data: newItem })
+  }
+
+  const onDelete = (id) => {
+    dispatch({ type: "DELETE", id })
+
+  }
+
+  // props내용을 공동으로 공유할 장소 설정
+  const DiaryStateContext = createContext()
+  const DiaryDispatchContext = createContext()
 
   return (
     <>
 
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/new/:id' element={<New />} />
-        <Route path='/diary' element={<Diary />} />
-        <Route path='/edit' element={<Edit />} />
-        <Route path='/*' element={<Notfound />} />
-      </Routes>
+      <DiaryStateContext.Provider value={{state}}>
+        <DiaryDispatchContext.Provider value={{onCreate,onUpdate,onDelete}}>
+
+
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/new/:id' element={<New />} />
+            <Route path='/diary' element={<Diary />} />
+            <Route path='/edit' element={<Edit />} />
+            <Route path='/*' element={<Notfound />} />
+          </Routes>
+        </DiaryDispatchContext.Provider>
+
+      </DiaryStateContext.Provider>
+
     </>
   )
 }
