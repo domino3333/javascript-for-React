@@ -6,7 +6,6 @@ const Home = () => {
   const onClickButton = (e) => {
     alert(e.target.innerText);
   }
-
   return (<>
     <Header title={"2026년 02월 12일"}
       leftChild={<Button text={"<이전달"} />}

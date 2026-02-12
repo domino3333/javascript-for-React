@@ -5,14 +5,9 @@ import New from './components/New'
 import Diary from './components/Diary'
 import Notfound from './components/Notfound'
 import Edit from './components/Edit'
-import Button from './components/Button'
 import Header from './components/Header'
 
 function App() {
-
-  const onClickButton = (e) => {
-    alert(e.target.innerText);
-  }
 
 
 
@@ -20,7 +15,7 @@ function App() {
 
   return (
     <>
-      <Header title={"HEADER"} leftChild={<Button text={"LEFT"} onClick={onClickButton} type={"POSITIVE"} />} rightChild={<Button text={"RIGHT"} type={"NEGATIVE"} onClick={onClickButton} />} />
+
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/new/:id' element={<New />} />
@@ -28,7 +23,6 @@ function App() {
         <Route path='/edit' element={<Edit />} />
         <Route path='/*' element={<Notfound />} />
       </Routes>
-
     </>
   )
 }
