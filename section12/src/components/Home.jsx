@@ -29,7 +29,7 @@ const Home = () => {
   //~3월 0일
   const endTime = new Date(pivotDate.getFullYear(), pivotDate.getMonth() + 1, 0, 23, 59, 59).getTime();
 
-  const monthData = state.filter((item) => item.createdDate >= beginTime && item.createdDate <= endTime);
+  const monthlyData = state.filter((item) => item.createdDate >= beginTime && item.createdDate <= endTime);
 
   const onClickButton = (e) => {
     alert(e.target.innerText);
@@ -39,7 +39,7 @@ const Home = () => {
       leftChild={<Button text={"<이전달"} onClick={onDecreaseMonth} />}
       rightChild={<Button text={"다음달>"} onClick={onIncreaseMonth} />}
     />
-    <DiaryList monthData={monthData} />
+    <DiaryList monthlyData={monthlyData} />
   </>)
 }
 
