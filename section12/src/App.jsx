@@ -11,15 +11,16 @@ import Header from './components/Header'
 function App() {
 
   const onClickButton = (e) => {
-    console.log(e);
     alert(e.target.innerText);
   }
 
 
 
+
+
   return (
     <>
-      <Header title={"HEADER"} leftChild={<Button text={"LEFT"} onClick={(e) => alert(e.target.innerText)} type={"POSITIVE"} />} rightChild={<Button text={"RIGHT"} type={"NEGATIVE"} onClick={(e) => alert(e.target.innerText)} />} />
+      <Header title={"HEADER"} leftChild={<Button text={"LEFT"} onClick={onClickButton} type={"POSITIVE"} />} rightChild={<Button text={"RIGHT"} type={"NEGATIVE"} onClick={onClickButton} />} />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/new/:id' element={<New />} />
