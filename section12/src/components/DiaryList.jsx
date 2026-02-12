@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 import DiaryItem from "./DiaryItem";
 import './DiaryList.css'
@@ -8,6 +9,17 @@ const DiaryList = ({ monthlyData }) => {
 
   //정렬 순서 상태 변화
   const [sortType, setSortType] = useState("latest")
+
+
+  //페이지라우팅
+  const nav = useNavigate();
+
+
+
+
+
+
+
   //정렬 처리
   const getSortedMonthlyData = () => {
 
@@ -15,7 +27,7 @@ const DiaryList = ({ monthlyData }) => {
       if (sortType === "oldest") {
         return Number(a.createdDate) - Number(b.createdDate)
       } else{
-        return Number(a.createdDate) - Number(b.createdDate)
+        return Number(b.createdDate) - Number(a.createdDate)
       }
     })
   }
@@ -30,7 +42,7 @@ const DiaryList = ({ monthlyData }) => {
           <option value={"latest"}>최신순</option>
           <option value={"oldest"}>오래된 순</option>
         </select>
-        <Button text={"새 일기 쓰기"} type={"POSITIVE"} />
+        <Button text={"새 일기 쓰기"} type={"POSITIVE"} onClick={()=>nav("/new")}/>
       </div>
       <div className="list_wrapper">
         {sortedMonthlyData.map((item)=> <DiaryItem key={item.id}{...item}/>)}

@@ -11,15 +11,21 @@ import Edit from './components/Edit'
 const mockData = [
   {
     id: 1,
-    createdDate: new Date().getTime(),
+    createdDate: new Date(2026,1,2).getTime(), // 1 = 2월
     emotionId: 1,
     content: "1번 일기 내용",
   },
   {
     id: 2,
-    createdDate: new Date().getTime(),
+    createdDate: new Date(2026,1,20).getTime(),
     emotionId: 2,
     content: "2번 일기 내용",
+  },
+  {
+    id: 3,
+    createdDate: new Date(2026,1,1).getTime(),
+    emotionId: 3,
+    content: "3번 일기 내용",
   },
 ];
 
@@ -49,7 +55,7 @@ function App() {
 
   const [state, dispatch] = useReducer(reducer, mockData)
 
-  const idRef = useRef(3);
+  const idRef = useRef(4);
 
   //이벤트 처리 onCreate,onUpdate, onDelete
   const onCreate = (createdDate, emotionId, content) => {
@@ -86,7 +92,7 @@ function App() {
 
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/new/:id' element={<New />} />
+            <Route path='/new/' element={<New />} />
             <Route path='/diary' element={<Diary />} />
             <Route path='/edit' element={<Edit />} />
             <Route path='/*' element={<Notfound />} />
