@@ -41,7 +41,9 @@ function reducer(state, action) {
   }
 }
 
-
+  // props내용을 공동으로 공유할 장소 설정
+  export const DiaryStateContext = createContext()
+  export const DiaryDispatchContext = createContext()
 
 function App() {
 
@@ -50,20 +52,20 @@ function App() {
   const idRef = useRef(3);
 
   //이벤트 처리 onCreate,onUpdate, onDelete
-  const onCreate = (createDate, emotionId, content) => {
+  const onCreate = (createdDate, emotionId, content) => {
     const newItem = {
       id: idRef.current++,
-      createDate,
+      createdDate,
       emotionId,
       content
     }
     dispatch({ type: "CREATE", data: newItem })
   }
 
-  const onUpdate = (id, createDate, emotionId, content) => {
+  const onUpdate = (id, createdDate, emotionId, content) => {
     const newItem = {
       id,
-      createDate,
+      createdDate,
       emotionId,
       content
     }
@@ -75,14 +77,10 @@ function App() {
 
   }
 
-  // props내용을 공동으로 공유할 장소 설정
-  const DiaryStateContext = createContext()
-  const DiaryDispatchContext = createContext()
-
   return (
     <>
 
-      <DiaryStateContext.Provider value={{state}}>
+      <DiaryStateContext.Provider value={state}>
         <DiaryDispatchContext.Provider value={{onCreate,onUpdate,onDelete}}>
 
 
