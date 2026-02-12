@@ -5,33 +5,27 @@ import New from './components/New'
 import Diary from './components/Diary'
 import Notfound from './components/Notfound'
 import Edit from './components/Edit'
-import Header from './components/Header'
-import { Link } from 'react-router-dom'
+import emotion1 from './assets/emotion1.png'
+
 function App() {
 
-  const nav = useNavigate();
 
-  const onClickGoPage = (e) => {
-    nav(`${e.target.value}`)
-  }
   return (
     <>
 
-      <Link to={"/"}>Home</Link>
-      <Link to={"/new"}>new</Link>
-      <Link to={"/diary"}>diary</Link>
-      <Link to={"/edit"}>Edit</Link><br/>
-      <button value="/" onClick={onClickGoPage} >Home</button>
-      <button value="/new" onClick={onClickGoPage}>New</button>
-      <button value="/diary" onClick={onClickGoPage}>diary</button>
-      <button value="/edit" onClick={onClickGoPage}>edit</button>
+      {/* 공통 부분 */}
+      <h2>public img</h2>
+      <img src="/emotion11.png"/>
 
+      <h2>assets img</h2>
+      <img src={emotion1}/>
+      <img src="./assets/emotion1.png"/>
 
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/new' element={<New />} />
-        <Route path='/edit' element={<Edit />} />
+        <Route path='/new/:id' element={<New />} />
         <Route path='/diary' element={<Diary />} />
+        <Route path='/edit' element={<Edit />} />
         <Route path='/*' element={<Notfound />} />
 
       </Routes>
