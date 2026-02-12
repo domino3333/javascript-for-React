@@ -6,19 +6,20 @@ import Diary from './components/Diary'
 import Notfound from './components/Notfound'
 import Edit from './components/Edit'
 import Button from './components/Button'
+import Header from './components/Header'
 
 function App() {
 
-  const onClickButton = (e)=>{
-  console.log(e);
+  const onClickButton = (e) => {
+    console.log(e);
     alert(e.target.innerText);
   }
 
+
+
   return (
     <>
-    <Button text={"저장하기"} type={"POSITIVE"} onClick={onClickButton}/>
-    <Button text={"취소하기"} type={"NEGATIVE"} onClick={onClickButton}/>
-    <Button text={"삭제하기"} type={"POSITIVE"} onClick={onClickButton}/>
+      <Header title={"HEADER"} leftChild={<Button text={"LEFT"} onClick={(e) => alert(e.target.innerText)} type={"POSITIVE"} />} rightChild={<Button text={"RIGHT"} type={"NEGATIVE"} onClick={(e) => alert(e.target.innerText)} />} />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/new/:id' element={<New />} />
