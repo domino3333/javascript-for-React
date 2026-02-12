@@ -1,0 +1,62 @@
+/* 리스트 전체 컨테이너 */
+.list-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #f4fbf7;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 120, 80, 0.12);
+}
+
+/* 검색바 */
+.search-bar {
+  display: flex;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+
+/* 검색 인풋 */
+.search-input {
+  flex: 1;
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid #b7e1cd;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #6fcf97;
+  box-shadow: 0 0 0 3px rgba(111, 207, 151, 0.3);
+}
+
+/* 검색 버튼 */
+.search-button {
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #6fcf97;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.search-button:hover {
+  background-color: #5bbf88;
+  box-shadow: 0 4px 10px rgba(0, 120, 80, 0.25);
+  transform: translateY(-1px);
+}
+
+.search-button:active {
+  transform: translateY(0);
+}
+
+/* 멤버 리스트 */
+.member-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}

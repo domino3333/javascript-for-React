@@ -1,0 +1,84 @@
+.edit-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e6f9ec, #c8f5d4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.edit-card {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  width: 380px;
+  box-shadow: 0 10px 25px rgba(0, 128, 0, 0.15);
+}
+
+.edit-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2e8b57;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #2e8b57;
+  font-weight: 600;
+}
+
+.form-group input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #b7e4c7;
+  outline: none;
+  transition: 0.2s;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  border-color: #52b788;
+  box-shadow: 0 0 0 2px rgba(82, 183, 136, 0.2);
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.back-btn {
+  background-color: #b7e4c7;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  background-color: #95d5b2;
+}
+
+.complete-btn {
+  background-color: #52b788;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.complete-btn:hover {
+  background-color: #40916c;
+}

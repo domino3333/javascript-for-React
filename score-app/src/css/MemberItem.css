@@ -1,0 +1,105 @@
+/* 멤버 카드 */
+.member-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  background-color: #eaf7f0;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 120, 80, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 120, 80, 0.2);
+}
+
+/* 정보 영역 */
+.member-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* 상단 정보 */
+.member-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 120px;
+}
+
+.member-id {
+  font-size: 0.8rem;
+  color: #5f9e83;
+  font-weight: 600;
+}
+
+.member-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2f7d5a;
+}
+
+/* 점수 영역 */
+.member-score {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  color: #3b7f63;
+}
+
+.member-score p {
+  margin: 0;
+}
+
+/* 버튼 영역 */
+.member-actions {
+  display: flex;
+  gap: 0.5rem; /* 버튼 간격 */
+}
+
+/* 수정 버튼 */
+.member-edit-button {
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #6fcf97;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.member-edit-button:hover {
+  background-color: #58bd84;
+  box-shadow: 0 4px 10px rgba(88, 189, 132, 0.35);
+}
+
+.member-edit-button:active {
+  transform: scale(0.95);
+}
+
+/* 삭제 버튼 */
+.member-delete-button {
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #ff8a8a;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.member-delete-button:hover {
+  background-color: #ff6b6b;
+  box-shadow: 0 4px 10px rgba(255, 107, 107, 0.35);
+}
+
+.member-delete-button:active {
+  transform: scale(0.95);
+}

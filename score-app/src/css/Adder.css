@@ -1,0 +1,75 @@
+/* 전체 컨테이너 */
+.adder-container {
+  max-width: 420px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f1f8f4;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 120, 80, 0.15);
+}
+
+/* 타이틀 */
+.adder-title {
+  margin-bottom: 1.5rem;
+  color: #2f7d5a;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* 폼 영역 */
+.adder-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* 라벨 */
+.adder-label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #3b7f63;
+  font-weight: 500;
+}
+
+/* 인풋 */
+.adder-input {
+  margin-top: 0.4rem;
+  padding: 0.6rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #b7e1cd;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.adder-input:focus {
+  outline: none;
+  border-color: #6fcf97;
+  box-shadow: 0 0 0 3px rgba(111, 207, 151, 0.3);
+}
+
+/* 버튼 */
+.adder-button {
+  margin-top: 1.2rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #6fcf97;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.adder-button:hover {
+  background-color: #5bbf88;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 120, 80, 0.25);
+}
+
+.adder-button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 6px rgba(0, 120, 80, 0.2);
+}
