@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "./Button";
 import './Editor.css'
 import EmotionItem from "./EmotionItem";
@@ -39,14 +39,26 @@ const getStringDate = (targetDate) => {
   return `${year}-${month}-${date}`;
 }
 
-const Editor = ({ onSubmit }) => {
+const Editor = ({ onSubmit,initData }) => {
   const nav = useNavigate();
+
 
   const [input, setInput] = useState({
     createdDate: new Date(),
     emotionId: 5,
     content: ""
   });
+
+
+  //변경된 데이터
+  const data = {...initData,
+    createdDate :input.createdDate,
+    emotionId:input.emotionId,
+    content:input.content 
+  };
+
+  console.log(data);
+
 
   const onChangeInput = (e) => {
     let name = e.target.name
@@ -79,7 +91,7 @@ const Editor = ({ onSubmit }) => {
       </section>
       <section className="button_section">
         <Button text={"취소하기"} onClick={() => nav(-1)} />
-        <Button text={"작성완료"} type={"POSITIVE"} onClick={() => onSubmit(input)} />
+        <Button text={"작성완료"} type={"POSITIVE"} onClick={() => onSubmit(data)} />
       </section>
     </div>
   </>
