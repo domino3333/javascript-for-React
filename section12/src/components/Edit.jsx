@@ -27,10 +27,10 @@ const Edit = () => {
   //   }
   // }, [data, curDiaryItem, nav]);
 
-  // // 데이터가 로드될 때까지 렌더링 방어
-  // if (!curDiaryItem) {
-  //   return <div>데이터를 불러오는 중입니다...</div>;
-  // }
+  // 데이터가 로드될 때까지 렌더링 방어
+  if (!curDiaryItem) {
+    return <div>데이터를 불러오는 중입니다...</div>;
+  }
 
   //삭제하기
   const onClickDelete = () => {

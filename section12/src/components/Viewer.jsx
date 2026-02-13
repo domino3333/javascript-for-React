@@ -1,5 +1,8 @@
+import { useParams } from "react-router-dom";
+import { DiaryStateContext } from "../App";
 import { getEmotionImage } from "../util/getEmotionImage";
 import './Viewer.css'
+import { useContext, useMemo } from "react";
 
 const emotionList = [
   {
@@ -24,10 +27,10 @@ const emotionList = [
   },
 ];
 
-const Viewer = () => {
+const Viewer = ({emotionId,content}) => {
 
-  const emotionId = 1;
-  const emotionItem = emotionList.find((item)=>String(item.emotionId) === String(emotionId))
+  const emotionItem = emotionList.find((item) => String(item.emotionId) === String(emotionId))
+
 
   return (<>
     <div className="Viewer">
@@ -41,7 +44,7 @@ const Viewer = () => {
       <section className="content_section">
         <h4>오늘의 일기</h4>
         <div className="content_wrapper">
-          <p>일기….</p>
+          <p>{content}</p>
         </div>
       </section>
     </div >
