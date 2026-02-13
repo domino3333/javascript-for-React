@@ -1,26 +1,14 @@
+import Header from './Header'
 import Button from './Button'
-import Header from './Header';
-
-
-
-
-const NotFound = () => {
-
-
-  const onClickButton = (e) => {
-    alert(e.target.innerText);
-  }
-
-
-  return (<>
-
-
-    <Header title={"HEADER"}
-      leftChild={<Button text={"LEFT"} onClick={onClickButton} type={"POSITIVE"} />}
-      rightChild={<Button text={"RIGHT"} type={"NEGATIVE"} onClick={onClickButton} />}
-    />
+import { useNavigate } from 'react-router-dom'
+const NotFound = ()=>{
+  const nav = useNavigate();
+  return <>
+     <Header 
+      leftChild={<Button text={"돌아가기"} type={"POSITIVE"} onClick={()=> nav("/")} />} 
+      rightChild={<Button text={"Right"} type={"NEGATIVE"} onClick={(e)=>{alert(e.target.innerText);}} />} 
+      title={"new 새 일기 쓰기"} />
     <h1>NotFound</h1>
-  </>)
+  </>
 }
-
-export default NotFound
+export default NotFound;

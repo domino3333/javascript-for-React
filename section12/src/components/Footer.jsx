@@ -1,8 +1,10 @@
-const Footer = () => {
+const Footer = ()=>{
 
-  return(<>
-    <h1>Footer 공통 부분</h1>
-  </>)
+  return <>
+    <div>
+      <hr />
+      <h1>Footer 공통부분</h1>
+    </div>
+  </>
 }
-
-export default Footer
+export default Footer;
